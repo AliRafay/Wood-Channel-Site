@@ -1,0 +1,569 @@
+@import "catalogue.css";
+:root{
+    --primary-color:#272727;
+    --secondary-color:#ff8000;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1e1e1e;
+    
+}
+nav {
+    background-color:var(--primary-color);
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    /* top: 0; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.navbar-div {
+    height: 100%;
+    display: flex;
+}
+
+.img-link-div {
+    width: 50%;
+}
+
+.img-link {
+    text-decoration: none !important;
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+}
+
+.header-text {
+    font-family: 'Permanent Marker',cursive;
+    margin-top: 4px;
+    margin-left: 4%;
+    color:var(--secondary-color) ;
+    font-size: 35px;
+    letter-spacing: 2px;
+    min-width: max-content;
+    
+}
+
+.navbar img{
+    width: 60px;
+    height: 55px;
+    margin-left: 5%;
+    margin-top: 2.5px;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: 20px;
+    
+}
+
+.nav-links li {
+    padding: 5px;
+    /* border-radius: 30px; */
+}
+
+/* .nav-links li.active a{
+    color: #ffbb77;
+} */
+
+.nav-links li:hover a{
+    color: #ffbb77;
+}
+
+.nav-links li a {
+    display: inline-block;
+    text-decoration: none;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--secondary-color);
+    /* letter-spacing: 1px; */
+    font-size: 20px;
+    transition: 0.5s ease;
+
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    position:absolute;
+    right: 40px;
+
+}
+.burger div{
+    display: flex;
+    background-color: var(--secondary-color);
+    margin: 2.5px;
+    height: 3px;
+    width: 25px;
+    flex-direction: column;
+}
+
+@media screen and (max-width:767px){
+
+    .navbar{
+        z-index: 1;
+    }
+
+    .img-link {
+        width: 70%;
+    }
+
+    .img-link-div{
+        width: 75%;
+    }
+    .header-text{
+        font-size: 28px;
+        margin-top: 1.8vh;
+    }
+    .burger {
+        display: flex;
+        flex-direction: column;
+        /* middle me krne ke liye */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .burger div {
+        transition: 0.5s ease-in-out;
+    }
+
+    .open .line1{
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    .open .line2{
+        opacity: 0;
+    }
+    .open .line3{
+        transform: rotate(45deg) translate(-5px,-6px);
+    }
+
+    ul.nav-links {
+        opacity: 0.96;
+        position: fixed;
+        background-color: var(--primary-color);
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-bottom: 18%;
+        margin-top: 10vh;
+        width: 100%;
+        clip-path: circle(100px at 110% -15%);
+        -webkit-clip-path: circle(100px at 110% -15%);
+        transition: 1s ease-in-out;
+    }
+    .nav-links li {
+        transition: none;
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1){
+        transition: 0.5s ease 0.3s;
+    }
+    .nav-links li:nth-child(2){
+        transition: 0.5s ease 0.5s;
+    }
+    .nav-links li:nth-child(3){
+        transition: 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(4){
+        transition: 0.5s ease 0.9s;
+    }
+
+    li.fade{
+        opacity: 1;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 100% -5%);
+        -webkit-clip-path: circle(1000px at 100% -5%);
+    }
+    
+    .nav-links li:hover {
+        background-color: transparent;
+    }
+
+    .main-background-image-text h2{
+        font-size: 3.5vw !important;
+    }
+    .about-us{
+        background: linear-gradient(to left,transparent ,8%,black),  url("/images/gourmet-ingredient-salts-in-bowls.jpg")  center no-repeat !important;
+        background-size: 100% 300px !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    .about-us-text{
+        font-size: 3.5vw !important;
+    }
+
+    /* features */
+    .features .col-md-12 h4{
+        font-size: 4vw !important;
+        letter-spacing: 2px !important;
+    }
+    .features .col-md-4 .quality,.features .col-md-4 .price{
+        height: 11vw !important;
+        width: 11vw !important;
+    }
+
+    .features .col-md-4 .affiliation{
+        height: 11vw !important;
+        width: 13vw !important;
+    }
+    .features .col-md-4 h5{
+        font-size: 3vw !important;
+    }
+    .features .col-md-4 p{
+        font-size: 2.4vw !important;
+    }
+
+    .form-head{
+        color: white;
+        font-size: 5vw !important;
+    }
+    
+    .google-map-div{
+        margin-top: 30px !important;
+    }
+/* FOOTER */
+
+
+    .getintouch {
+        width: max-content;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    hr {
+        width: 100% !important;
+    }
+
+}
+/* end of medium media query */
+
+
+/* background image */
+.main-background-image {
+    z-index: -1;
+    position: relative;
+    top: 10vh;
+}
+
+.main-background-image img{
+    width: 100%;
+    height: 48vw;
+}
+
+.main-background-image-text{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.main-background-image-text h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3vw;
+    color: white;
+    text-shadow: var(--secondary-color) 2px 2px 5px;
+}
+
+.about-us{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: linear-gradient(to left,transparent ,8%,black),  url("/images/gourmet-ingredient-salts-in-bowls.jpg") fixed  center no-repeat;
+    background-size: 100% 100%;
+    margin-top: 10vh;
+
+}
+
+.about-us-text {
+    font-size: 2.3vw;
+    text-align: justify;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: #e4dae9;
+    font-family: cursive;
+}
+
+
+.about-us h2{
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 3.5vw;
+}
+
+.about-us i{
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 4vw;
+    margin-bottom: 15px;
+
+}
+
+.features{
+    padding-top: 40px;
+    padding-bottom: 10px;
+    margin-top: 10vh;
+}
+.features .col-md-12{
+    margin-bottom: 20px;
+}
+
+.features .col-md-4{
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.features .col-md-12 h4{
+    text-align: center;
+    color: #fff;
+    font-size: 2.2vw;
+}
+ 
+.features .col-md-4 .quality ,.features .col-md-4 .price{
+    height: 8vw;
+    width: 8vw;
+}
+
+.features .col-md-4 .affiliation{
+    height: 8vw;
+    width: 10vw;
+}
+.features .col-md-4 h5{
+    font-size: 1.6vw;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #eba55f;
+    text-align: center;
+    letter-spacing: 1px;
+}
+@media screen and (min-width:1366px){
+    .features .col-md-4 p{
+        font-size:1.2vw !important;
+    }
+}
+.features .col-md-4 p{
+    color:#999999;
+    text-align: center;
+    font-size:1.5vw;
+}
+
+/* CONTACT US */
+
+.contact-us{
+    background-color: black;
+}
+
+.col-md-7{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.bc-grey{
+    background-color: var(--primary-color);
+}
+form.bc-grey{
+    padding: 25px;
+    border-radius: 30px;
+}
+.form-head{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 3vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.form-inside-row{
+    margin-bottom: 2.5rem;
+}
+
+label {
+    padding-left: 10px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color:#fff ;
+    background-color: var(--primary-color);
+    border: 2px solid;
+    outline: none;
+    height: 43px;
+    border-radius: 30px;
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+textarea.form-control {
+    height: auto;
+    width: 100%;
+}
+
+.form-control:active,.form-control:focus{
+    border-color: #ff8000;
+}
+
+body > div.contact-us > div > div > div.col-md-7 > form > div:nth-child(6){
+    margin-bottom: 10px;
+
+}
+.btn-primary{
+    outline: none;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    font-family:sans-serif ;
+}
+
+.btn-primary:hover{
+    background-color: #ffad5b;
+}
+
+.google-map-div{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+.google-map{
+    border:3px solid; 
+    border-radius: 20px;
+}
+
+.address-contact-us{
+    color: white;
+    border-radius:20px ;
+    width: 350px;
+    padding: 1.5rem;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.address-contact-us .head{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.address-contact-us .text,.address-contact-us .text a{
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #ffbb77;
+    transition: 0.5s ease;
+}
+
+.address-contact-us .text a:hover{
+    color: var(--secondary-color);
+
+}
+
+
+/* FOOTER */
+
+.footer-div{
+    width: 100%;
+}
+
+.footer-div .bottom {
+    height: 4vh;
+    width: 100%;
+    background-color: #0d96df;
+    color: white;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.bottom h6{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.footer-div .top {
+    background-color:#333333 ;
+    color:#999999;
+    padding: 40px 10px 40px 10px;
+    width: 100%;
+}
+
+.top span p {
+    display: inline-block;
+    margin-left: 7px;
+    font-size: 16px;
+}
+
+.top span a {
+    color: #999999;
+    transition: ease 0.3s;
+}
+
+.top span a:hover {
+    color:#fff ;
+}
+
+.address {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.getintouch {
+    margin-left: 10%;
+}
+
+.footer-ul {
+    list-style: none;
+}
+
+.footer-ul li{
+    display: inline-block;
+    font-size: 2.5rem;
+    width: 40px;
+    margin-top: 0;
+    transition: ease 0.5s;
+}
+
+.footer-ul i {
+    color: #999999;
+}
+
+.footer-ul i{
+    transition: ease 0.5s ;
+}
+
+.footer-ul i:hover{
+    color: white;
+}
